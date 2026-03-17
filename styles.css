@@ -302,34 +302,46 @@ textarea:focus-visible {
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .hero__intro .eyebrow {
   margin: 0;
 }
 
-.hero__tag {
-  display: inline-flex;
-  align-items: center;
-  min-height: 36px;
-  padding: 0 14px;
-  border-radius: 999px;
-  color: var(--accent);
-  border: 1px solid rgba(255, 61, 0, 0.18);
-  background: rgba(255, 248, 243, 0.96);
-  font-family: "Source Sans Pro", "Museo Sans Cyr", sans-serif;
-  font-size: 0.88rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
 .hero__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 14px 16px;
   margin: 0;
   max-width: 13ch;
   font-size: clamp(2.8rem, 6.9vw, 5.8rem);
   line-height: 0.95;
   letter-spacing: -0.06em;
+}
+
+.hero__title-copy {
+  max-width: 12ch;
+}
+
+.hero__title-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  padding: 0.12em 0.38em 0.18em;
+  border-radius: 0.18em;
+  color: #fff;
+  background: linear-gradient(135deg, #ff5a36, var(--accent));
+  box-shadow: 0 16px 32px rgba(255, 61, 0, 0.22);
+  font-family: "Source Sans Pro", "Museo Sans Cyr", sans-serif;
+  font-size: 0.88em;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.88;
+  transform: rotate(-2deg) translateY(-0.04em);
 }
 
 .hero__text {
@@ -1205,6 +1217,10 @@ textarea:focus-visible {
     max-width: none;
   }
 
+  .hero__title-copy {
+    max-width: none;
+  }
+
   .hero__visual {
     min-height: 540px;
   }
@@ -1264,10 +1280,12 @@ textarea:focus-visible {
     align-items: stretch;
   }
 
-  .hero__tag {
-    min-height: 34px;
-    padding: 0 12px;
-    font-size: 0.8rem;
+  .hero__title {
+    gap: 10px 12px;
+  }
+
+  .hero__title-tag {
+    font-size: 0.82em;
   }
 
   .hero__visual {

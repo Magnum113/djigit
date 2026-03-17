@@ -297,17 +297,44 @@ textarea:focus-visible {
   gap: clamp(24px, 5vw, 60px);
 }
 
+.hero__intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.hero__intro .eyebrow {
+  margin: 0;
+}
+
+.hero__tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  color: var(--accent);
+  border: 1px solid rgba(255, 61, 0, 0.18);
+  background: rgba(255, 248, 243, 0.96);
+  font-family: "Source Sans Pro", "Museo Sans Cyr", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
 .hero__title {
   margin: 0;
-  max-width: 11ch;
-  font-size: clamp(3rem, 8vw, 6.6rem);
-  line-height: 0.92;
+  max-width: 13ch;
+  font-size: clamp(2.8rem, 6.9vw, 5.8rem);
+  line-height: 0.95;
   letter-spacing: -0.06em;
 }
 
 .hero__text {
-  max-width: 62ch;
-  margin: 28px 0 0;
+  max-width: 40ch;
+  margin: 24px 0 0;
   color: var(--muted);
   font-size: 1.15rem;
   line-height: 1.72;
@@ -1235,6 +1262,12 @@ textarea:focus-visible {
   .hero__actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .hero__tag {
+    min-height: 34px;
+    padding: 0 12px;
+    font-size: 0.8rem;
   }
 
   .hero__visual {

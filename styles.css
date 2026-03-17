@@ -174,6 +174,56 @@ textarea:focus-visible {
   border-color: var(--line-strong);
 }
 
+.button--magnet {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(135deg, #ff5a36 0%, var(--accent) 58%, #ff7a4f 100%);
+  border-color: rgba(255, 61, 0, 0.18);
+  box-shadow:
+    0 20px 42px rgba(255, 61, 0, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 34px rgba(255, 61, 0, 0.2);
+  isolation: isolate;
+  animation: magnetPulse 3.2s ease-in-out infinite;
+}
+
+.button--magnet::before,
+.button--magnet::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.button--magnet::before {
+  inset: -120% auto -120% -36%;
+  width: 38%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.26),
+    transparent
+  );
+  transform: skewX(-22deg) translateX(-220%);
+  animation: magnetShine 4.4s ease-in-out infinite 0.35s;
+}
+
+.button--magnet::after {
+  inset: 1px;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.button--magnet:hover,
+.button--magnet:focus-visible {
+  box-shadow:
+    0 24px 48px rgba(255, 61, 0, 0.34),
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 0 44px rgba(255, 61, 0, 0.24);
+}
+
 .button--full {
   width: 100%;
 }
@@ -357,6 +407,10 @@ textarea:focus-visible {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 30px;
+}
+
+.hero__actions .button {
+  min-width: 220px;
 }
 
 .hero__highlights {
@@ -792,6 +846,28 @@ textarea:focus-visible {
   line-height: 1.62;
 }
 
+.case-card__results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.case-card__results span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 16px;
+  color: #fff;
+  background: linear-gradient(135deg, #ff5a36, var(--accent));
+  box-shadow: 0 14px 28px rgba(255, 61, 0, 0.18);
+  font-family: "Source Sans Pro", "Museo Sans Cyr", sans-serif;
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
 .case-card__link {
   display: inline-flex;
   align-items: center;
@@ -807,6 +883,22 @@ textarea:focus-visible {
 
 .video-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cases__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 720px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.cases__note span {
+  color: var(--accent);
+  font-weight: 700;
 }
 
 .video-card {
@@ -917,12 +1009,61 @@ textarea:focus-visible {
   letter-spacing: -0.05em;
 }
 
+.lead-magnet__card .eyebrow {
+  margin: 0 0 12px;
+}
+
 .lead-magnet__card ul {
   margin: 0;
   padding: 0;
   list-style: none;
   color: var(--muted);
   line-height: 1.8;
+}
+
+.lead-magnet__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.lead-magnet__chips span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(255, 61, 0, 0.16);
+  font-size: 0.88rem;
+}
+
+.lead-magnet__details h3 {
+  margin: 0 0 16px;
+  font-size: 1.14rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.lead-magnet__action {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  justify-items: start;
+}
+
+.lead-magnet__action .button {
+  min-width: 260px;
+}
+
+.lead-magnet__micro {
+  max-width: 24ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
 }
 
 .testimonial-grid {
@@ -1124,14 +1265,63 @@ textarea:focus-visible {
   transform: translateY(0);
 }
 
+@keyframes magnetPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 20px 42px rgba(255, 61, 0, 0.28),
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 0 34px rgba(255, 61, 0, 0.2);
+  }
+
+  50% {
+    box-shadow:
+      0 24px 50px rgba(255, 61, 0, 0.34),
+      0 0 0 1px rgba(255, 255, 255, 0.12),
+      0 0 42px rgba(255, 61, 0, 0.26);
+  }
+}
+
+@keyframes magnetShine {
+  0%,
+  20% {
+    transform: skewX(-22deg) translateX(-220%);
+    opacity: 0;
+  }
+
+  28% {
+    opacity: 1;
+  }
+
+  48% {
+    transform: skewX(-22deg) translateX(440%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: skewX(-22deg) translateX(440%);
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .button,
   .chip-link,
   .faq-item__body,
   .faq-item__icon,
-  .site-nav a::after {
+  .site-nav a::after,
+  .button--magnet::before {
     transition: none;
+  }
+
+  .button--magnet {
+    animation: none;
+  }
+
+  .button--magnet::before {
+    animation: none;
+    opacity: 0;
   }
 
   html {
@@ -1195,6 +1385,11 @@ textarea:focus-visible {
 
   .lead-magnet__card {
     grid-template-columns: 1fr;
+  }
+
+  .lead-magnet__action .button {
+    width: 100%;
+    min-width: 0;
   }
 
   .process .timeline {

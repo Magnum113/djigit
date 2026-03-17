@@ -327,6 +327,34 @@ textarea:focus-visible {
   margin-top: 36px;
 }
 
+.hero__trust {
+  margin-top: 22px;
+}
+
+.hero__trust-text {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.hero__trust-brands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero__trust-brands span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.76);
+}
+
 .hero-stat {
   padding: 18px 18px 20px;
   border: 1px solid var(--line);
@@ -562,41 +590,6 @@ textarea:focus-visible {
     linear-gradient(90deg, rgba(255, 61, 0, 0.18), rgba(255, 61, 0, 0.06));
 }
 
-.trust-strip {
-  padding: 18px 0 0;
-}
-
-.trust-strip__inner {
-  display: grid;
-  gap: 14px;
-  padding: 24px 28px;
-  border-radius: 28px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.trust-strip__inner p {
-  margin: 0;
-  font-size: 1.02rem;
-}
-
-.trust-strip__brands {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.trust-strip__brands span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 42px;
-  padding: 0 16px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  color: var(--muted);
-  background: rgba(255, 255, 255, 0.8);
-}
-
 .situation-grid,
 .services-grid,
 .case-list,
@@ -659,7 +652,7 @@ textarea:focus-visible {
 }
 
 .services-grid {
-  grid-template-columns: 1.2fr 1fr 0.95fr;
+  grid-template-columns: 1.2fr 1fr;
   align-items: start;
 }
 
@@ -703,6 +696,16 @@ textarea:focus-visible {
   background: var(--accent);
 }
 
+.services-note {
+  margin: 18px 0 0;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 .case-list {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -743,15 +746,15 @@ textarea:focus-visible {
   line-height: 1.62;
 }
 
-.advantages__grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 24px;
-  align-items: start;
-}
-
 .advantage-list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.process-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 18px;
 }
 
 .process .timeline {
@@ -1074,7 +1077,6 @@ textarea:focus-visible {
   }
 
   .hero__grid,
-  .advantages__grid,
   .faq__grid,
   .contact__grid {
     grid-template-columns: 1fr;
@@ -1096,6 +1098,10 @@ textarea:focus-visible {
 
   .process .timeline {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .process-summary {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -1,8 +1,8 @@
 const phrases = [
-  "увеличивают конверсию на 10%",
-  "растят поток заказов на 100 в день",
-  "сокращают путь до заявки на 37%",
-  "поднимают повторные продажи на 24%",
+  "дают +10% к конверсии",
+  "приносят 100 заказов в день",
+  "снижают CPL на 22%",
+  "возвращают клиентов на 24%",
   "окупаются за 4 месяца"
 ];
 
@@ -42,18 +42,19 @@ if (track) {
     track.append(nextItem);
 
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        activeItem.classList.add("is-leaving");
-        activeItem.classList.remove("is-active");
+      activeItem.classList.add("is-leaving");
+      activeItem.classList.remove("is-active");
+
+      window.setTimeout(() => {
         nextItem.classList.remove("is-entering");
         nextItem.classList.add("is-active");
-      });
+      }, prefersReducedMotion.matches ? 0 : 110);
     });
 
     window.setTimeout(() => {
       activeItem.remove();
       activeItem = nextItem;
-    }, prefersReducedMotion.matches ? 0 : 680);
+    }, prefersReducedMotion.matches ? 0 : 460);
   };
 
   syncRotatorHeight();

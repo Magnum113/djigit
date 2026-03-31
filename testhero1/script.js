@@ -6,8 +6,25 @@ const phrases = [
   "окупаются за 4 месяца"
 ];
 
+const headerInner = document.querySelector(".site-header__inner");
+const menuToggle = document.querySelector(".menu-toggle");
+const menuLinks = document.querySelectorAll(".site-nav a");
 const track = document.querySelector("[data-rotator-track]");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if (menuToggle && headerInner) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = headerInner.classList.toggle("is-open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      headerInner.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
 
 if (track) {
   let index = 0;

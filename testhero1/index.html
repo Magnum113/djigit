@@ -24,10 +24,37 @@
         <div class="hero-test__background hero-test__background--right"></div>
 
         <div class="hero-test__shell">
-          <a class="hero-test__brand" href="/">
-            <img src="/assets/djigit-logo.svg" alt="Djigit" />
-            <span>test hero 01</span>
-          </a>
+          <header class="site-header">
+            <div class="site-header__inner">
+              <a class="site-logo" href="/" aria-label="Djigit">
+                <img src="/assets/djigit-logo.svg" alt="Djigit" />
+              </a>
+
+              <button
+                class="menu-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="site-nav"
+                aria-label="Открыть меню"
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+
+              <nav class="site-nav" id="site-nav">
+                <a href="/#services">Услуги</a>
+                <a href="/#cases">Проекты</a>
+                <a href="/#process">Процесс</a>
+                <a href="/#contacts">Контакты</a>
+              </nav>
+
+              <div class="site-header__actions">
+                <a class="chip-link" href="tel:+79388009996">+7 (938) 800 99 96</a>
+                <a class="button button--primary" href="/#lead-form">Обсудить проект</a>
+              </div>
+            </div>
+          </header>
 
           <div class="hero-test__grid">
             <div class="hero-test__copy">
@@ -38,7 +65,7 @@
                   <span class="hero-test__rotator" aria-live="polite">
                     <span class="hero-test__rotator-track" data-rotator-track>
                       <span class="hero-test__rotator-item is-active">
-                        увеличивают конверсию на 10%
+                        дают +10% к конверсии
                       </span>
                     </span>
                   </span>

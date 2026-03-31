@@ -377,23 +377,9 @@ a {
 .hero-test__proof-logo--insan {
   height: 22px;
 }
-
-.hero-test__wordmark {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  padding: 0 12px;
-  border-radius: 999px;
-  color: var(--accent-strong);
-  background: var(--accent-soft);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.hero-test__wordmark--peretz {
-  letter-spacing: 0.16em;
+.hero-test__proof-logo--peretz {
+  height: 20px;
+  max-width: 108px;
 }
 
 .hero-test__proof strong {
